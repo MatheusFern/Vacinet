@@ -1,3 +1,13 @@
+
+import { createAppContainer } from 'react-navigation';
+
+
+import MainNavigator from './src/navigators/MainNavigator';
+
+export default createAppContainer(MainNavigator);
+
+/*
+
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
@@ -12,9 +22,14 @@ import NavBarD from './src/components/NavBarD';
 import IMC from './src/components/IMC';
 import Cadastro from './src/components/cadastro';
 import Perfil from './src/components/Perfil';
-
-
-
+import BemVindo from './src/components/BemVindo';
+import Servicos from './src/components/Servicos';
+import Donate from './src/components/Donate/Donate';
+import DonateP from './src/components/Donate/DonateP';
+import Tranplant from './src/components/Transplant/Transplant';
+import Login from './src/components/Login';
+import DonateAdd from './src/components/Donate/DonateAdd';
+import Ficha from './src/components/Ficha';
 
 const Page = styled.SafeAreaView`
   flex:1;
@@ -25,9 +40,9 @@ const Page = styled.SafeAreaView`
 export default () => {
   return (
     <Page >
-      <Header/>
-      <Home/>
-      <NavBarD/>      
+       <Ficha/>
     </Page>
   )
 };
+
+*/

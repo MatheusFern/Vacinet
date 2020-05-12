@@ -32,7 +32,7 @@ color:#00C2CB;
 font-weight:bold;
 `;
 
-export default () => {
+const Perfil =  () => {
   return (
     <ViewPerfil>
       <Image source={require('../assets/seringa.png')}
@@ -56,3 +56,4 @@ export default () => {
     </ViewPerfil>
   )
 }
+export default Perfil
