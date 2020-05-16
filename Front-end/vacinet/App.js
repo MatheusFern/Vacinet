@@ -2,9 +2,9 @@
 import { createAppContainer } from 'react-navigation';
 
 
-import MainNavigator from './src/navigators/MainNavigator';
+import IntroStack from './src/navigators/IntroStack';
 
-export default createAppContainer(MainNavigator);
+export default createAppContainer(IntroStack);
 
 /*
 

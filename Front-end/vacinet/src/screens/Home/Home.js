@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+
+
 const Container = styled.SafeAreaView`
 flex:1;
 flexDirection: column;
@@ -47,6 +49,7 @@ const Home = (props) => {
   }
 
   return (
+
     <Container>
       <BodyHome>
         <Itens onPress={IrIMC}>
@@ -69,7 +72,14 @@ const Home = (props) => {
 
 Home.navigationOptions = () => {
   return {
-    title: 'Tela principal'
+    title: 'Ola [usuario]',
+
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 export default Home;

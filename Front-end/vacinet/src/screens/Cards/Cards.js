@@ -23,17 +23,22 @@ textAlign: center;
   color:white;
 `;
 
-const Cards = () => {
+const Cards = (props) => {
+  const IrCartao = () => {
+    props.navigation.navigate('Cartao');
+  }
+  
+  
   return (
     <Container>
-      <Button>
+      <Button onPress={IrCartao}>
         <Text>crianca</Text>
       </Button>
-      <Button>
+      <Button onPress={IrCartao}>
         <Text>adulto</Text>
 
       </Button>
-      <Button>
+      <Button onPress={IrCartao}>
         <Text>idoso</Text>
 
       </Button>
@@ -42,7 +47,13 @@ const Cards = () => {
 }
 Cards.navigationOptions = () =>{
   return{
-    title:'Cartao'
+    title:'Cartao',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
 
   }
 };

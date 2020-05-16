@@ -32,33 +32,38 @@ textAlign: center;
 `;
 
 const Services = (props) => {
-  /*const IrIMC = () => {
-    props.navigation.navigate('IMC');
+
+  const IrHospital = () => {
+    props.navigation.navigate('Hospital');
   }
 
-  const IrDonate = () => {
-    props.navigation.navigate('Donate');
+
+  const IrPostos = () => {
+    props.navigation.navigate('Postos');
   }
-  const IrTransplant = () => {
-    props.navigation.navigate('Transplant');
+
+
+  const IrUrgencia = () => {
+    props.navigation.navigate('Urgencia');
   }
-  const IrExamns = () => {
-    props.navigation.navigate('Exams')
-  }
-*/
+  
+   const IrFarmacias = () => {
+     props.navigation.navigate('Farmacias')
+   }
+ 
   return (
     <Container>
       <BodyHome>
-        <Itens >
+        <Itens onPress={IrHospital}>
           <Texto>Hospitais </Texto>
         </Itens>
-        <Itens >
+        <Itens onPress={IrPostos}>
           <Texto>Postos de saude</Texto>
         </Itens>
-        <Itens >
+        <Itens onPress={IrUrgencia}>
           <Texto>Servicos de urgencia</Texto>
         </Itens>
-        <Itens >
+        <Itens onPress={IrFarmacias} >
           <Texto>Farmacia popular</Texto>
         </Itens>
       </BodyHome>
@@ -69,7 +74,13 @@ const Services = (props) => {
 
 Services.navigationOptions = () => {
   return {
-    title: 'servicos '
+    title: 'servicos ',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 export default Services;

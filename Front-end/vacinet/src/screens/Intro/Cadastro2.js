@@ -12,7 +12,7 @@ flex:1;
 `;
 
 const TituloText = styled.Text`
-font-size:40px;
+font-size:35px;
 padding: 15px;
 textAlign:center;
 `;
@@ -43,52 +43,55 @@ padding-top:25px;
 
 const BtnView = styled.View`
 `;
-const Saude = () =>{
+
+
+const CadastroSub = (props) => {
+   
+  
+  const Cadastro2 = () => {
+    props.navigation.navigate('Home');
+   }
+  
   return (
     <Cadastro>
       <Scroll>
-        <TituloText>Minha Saude</TituloText>
+        <TituloText>Cadastro Ficha medica</TituloText>
 
+        <Text>Tipo sanguineo</Text>
+        <InputT
+          placeholder="Informe seu tipo sanguineo"
+        />
+
+        <Text>Restricao Alergica</Text>
+        <InputT
+          placeholder="Informe se possui restricao alergica"
+        />
+
+        <Text>Medicamentos</Text>
+        <InputT
+          placeholder="Informe se toma algum medicamento"
+        />
         <Text>Problemas de Saude</Text>
         <InputT
           placeholder="Informe se possui problema de saude"
         />
-
-        <Text>Alergias e reacoes </Text>
-        <InputT
-          placeholder="Informe se possui alergia "
+        
+        <BtnView>
+        <CadastrarBTN title={"Cadastrar"} 
+        onPress={Cadastro2}
+        color='#00C2CB'
         />
-
-        <Text>Grupo Sanguineo</Text>
-        <InputT
-          placeholder="Qual o seu tipo Sanguineo"
-        />
-        <Text>Peso em Kg</Text>
-        <InputT
-          placeholder="Informe seu Peso em Kilogrmas"
-        />
-        <Text>Altura em CM</Text>
-        <InputT
-          placeholder="Informe sua Altura"
-        />
-        <Text>Contatos de Emergencia</Text>
-       
+        </BtnView>
       </Scroll>
     </Cadastro>
   )
 }
 
-Saude.navigationOptions = () =>{
+CadastroSub.navigationOptions = () =>{
   return{
-    title:'Minha Saude',
-    headerStyle: {
-      backgroundColor: '#00C2CB',
-      height: 80,
-    },
-    headerTintColor: '#fff',
-    headerTitleAlign: 'center',
+    title:'Cadastro2'
 
   }
 };
 
-export default Saude;
+export default CadastroSub;

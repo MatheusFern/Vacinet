@@ -56,4 +56,18 @@ const Perfil =  () => {
     </ViewPerfil>
   )
 }
-export default Perfil
+
+Perfil.navigationOptions = () =>{
+  return{
+    title:'Perfil',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
+
+  }
+};
+
+export default Perfil;

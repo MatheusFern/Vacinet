@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Button } from 'native-base';
+
 
 const Cadastro = styled.SafeAreaView`
 flex:1;
@@ -48,7 +48,7 @@ const BtnView = styled.View`
 
 const Screen = (props) => {
    const Cadastro2 = () => {
-    props.navigation.navigate('Home');
+    props.navigation.navigate('CadastroSub');
    }
   
   return (

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { Image } from 'react-native';
 
@@ -7,6 +7,7 @@ flex:1;
 flex-direction:column;
 justifyContent:center;
 align-items:center;
+margin:20px;
 `;
 
 const BVtexto = styled.Text`
@@ -38,53 +39,62 @@ margin-top:20px;
 border-radius:10px;
 padding:10px;
 `;
+const TextSenhaE = styled.Text`
+font-size: 20px;
+color:#00C2CB;`;
+
 const ButtonView = styled.View`
 padding-top:10px;
 `;
 const InputB = styled.Button`
 
+
+`;
+const Buttao = styled.TouchableOpacity`
+padding:10px;
+
 `;
 
-const Screen = (props) => {
+
+const SenhaLost = (props) => {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  
+
+
   const IrHome = () => {
-    props.navigation.navigate('Home');
+    props.navigation.navigate('Welcome');
   }
-  
+
   return (
     <ViewLogin>
       <Image source={require('../assets/seringa.png')}
         style={{ width: 50, height: 50 }} />
-      <BVtexto>Bem vindo de volta!</BVtexto>
-
+      <BVtexto>Informe seu Email</BVtexto>
+      <TextSenhaE>Enviaremos um link para recuperar a sua senha</TextSenhaE>
       <TextLogin>E-mail</TextLogin>
       <InputEmail
-        value={email} onChangeText={e=>setEmail(e)}
+        value={email} onChangeText={e => setEmail(e)}
         placeholder="usario@gmail.con"
       />
-      <TextLogin>Senha</TextLogin>
-      <InputSenha
-        value={senha} onChangeText={e=>setSenha(e)}
-        placeholder="******"
-      />
+
+
+
       <ButtonView>
         <InputB
           onPress={IrHome}
-          title={"login"}
+          title={"Retornar"}
           color="#00C2CB"
-          
+
         />
+
       </ButtonView>
     </ViewLogin>
 
   )
 }
 
-Screen.navigationOptions = () => {
-  return{
-    title:'login'
+SenhaLost.navigationOptions = () => {
+  return {
+    title: 'senha'
   }
 }
-export default Screen;
+export default SenhaLost;

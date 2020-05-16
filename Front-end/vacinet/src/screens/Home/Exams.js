@@ -27,7 +27,8 @@ return(
 }
 Exams.navigationOptions = () => {
   return {
-    title: 'Exames'
+    title: 'Exames',
+    
   }
 }
 export default Exams;
