@@ -53,7 +53,7 @@ const CalcularB = styled.Button`
 padding-top: 25px;
 `;
 
-const IMC =  (props) => {
+const IMC = () => {
 
   //pega os valores
   const [peso, setPeso] = useState('');
@@ -71,11 +71,11 @@ const IMC =  (props) => {
 
   }
 
-  
+
   return (
     <Page>
       <TituloText> Calculo de IMC </TituloText>
-      
+
       <InputP
         placeholder="Qual e o seu peso"
         keyboardType="numeric"
@@ -90,20 +90,26 @@ const IMC =  (props) => {
         onChangeText={a => setAltura(a)}
       />
 
-     
+
       <CalcularB title={"Calcular"} onPress={calc} />
       {imc > 0 &&
-      <ResultArea>
-      <ResultItemTittle>Seu IMC</ResultItemTittle>
-      <ResultItem>{parseFloat(imc).toFixed(2)}</ResultItem>
-      </ResultArea>
-        }
+        <ResultArea>
+          <ResultItemTittle>Seu IMC</ResultItemTittle>
+          <ResultItem>{parseFloat(imc).toFixed(2)}</ResultItem>
+        </ResultArea>
+      }
     </Page>
   )
 }
-IMC.navigateOptions = () => {
-  return{
-    title:'calculo de IMC'
+IMC.navigationOptions = () => {
+  return {
+    title: 'calculo de IMC',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 

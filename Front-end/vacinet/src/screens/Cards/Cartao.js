@@ -45,5 +45,16 @@ const Cartao = () => {
     </Container>
   )
 }
+Cartao.navigationOptions = () =>{
+  return{
+    title:'Ultimas vacinas',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
 
+  }
+};
 export default Cartao;

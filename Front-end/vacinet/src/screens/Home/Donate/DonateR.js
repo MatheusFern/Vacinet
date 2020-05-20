@@ -38,5 +38,17 @@ const DonateR = () => {
     </ViewCentral>
   )
 }
+DonateR.navigationOptions = () => {
+  return {
+    title: 'Regras para Doar Sangue',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
+} 
+
+}
 
 export default DonateR;

@@ -6,7 +6,7 @@ const BVview = styled.SafeAreaView`
   flex:1;
   align-items:center;
   flexDirection: column;
-  justifyContent:space-around;
+  justifyContent:space-evenly;
 `;
 const BVtexto = styled.Text`
   textAlign: center;
@@ -35,7 +35,7 @@ const Screen = (props) =>  {
   return (
     <BVview>
       <Image source={require('../assets/seringa.png')}
-        style={{ width: 50, height: 50 }} />
+        style={{ width: 150, height: 150}} />
       <BVtexto>Bem vindo(a)</BVtexto>
       <PerguntaTexto>Ja e cadastrado</PerguntaTexto>
       <SButon title={"Ja sou cadastrado"} 

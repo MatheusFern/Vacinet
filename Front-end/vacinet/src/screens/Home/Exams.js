@@ -28,7 +28,12 @@ return(
 Exams.navigationOptions = () => {
   return {
     title: 'Exames',
-    
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 export default Exams;

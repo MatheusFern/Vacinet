@@ -9,13 +9,14 @@ justifyContent:center;
 `;
 
 const Button = styled.TouchableOpacity`
-height: 200px;
+height: 180px;
 width: 90%;
 background-color:#008F95;
 border-radius:25px;
 justifyContent:center;
 margin:15px;
 `;
+
 
 const Text = styled.Text`
 textAlign: center;
@@ -31,6 +32,7 @@ const Cards = (props) => {
   
   return (
     <Container>
+      
       <Button onPress={IrCartao}>
         <Text>crianca</Text>
       </Button>
@@ -42,6 +44,7 @@ const Cards = (props) => {
         <Text>idoso</Text>
 
       </Button>
+      
     </Container>
   )
 }

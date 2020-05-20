@@ -12,4 +12,15 @@ const DonateL = () => {
     <DonateAdd items={items} setItems={setItems} />
   )
 }
+DonateL.navigationOptions = () => {
+  return {
+    title: 'Registrar Doacao de sangue',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
+  }
+}
 export default DonateL;

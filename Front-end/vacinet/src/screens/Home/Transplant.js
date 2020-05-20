@@ -40,7 +40,13 @@ const Transplant =  (props) => {
 
 Transplant.navigationOptions = () => {
   return {
-    title: 'Transplante'
+    title: 'Informacoes sobre transplante',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 

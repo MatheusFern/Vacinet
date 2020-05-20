@@ -1,14 +1,22 @@
 
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
+import { Provider } from 'react-redux';
+import Store from './src/Store';
 
-
+import MainNavigator from './src/navigators/MainNavigator'
 import IntroStack from './src/navigators/IntroStack';
 
-export default createAppContainer(IntroStack);
+const AppContainer =  createAppContainer(IntroStack);
 
+
+export default () => (
+  <Provider store ={Store}>
+    <AppContainer/>
+  </Provider>
+)
 /*
 
-import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 import { Button } from 'native-base';

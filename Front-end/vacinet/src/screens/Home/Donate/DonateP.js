@@ -6,9 +6,6 @@ import DonateAdd from './DonateAdd';
 import uuid from 'uuid/v4';
 import { ActivityIndicator } from 'react-native';
 
-import axios from 'axios';
-import api from '../../../services/api';
-
 
 const ViewCentral = styled.SafeAreaView`
   flex:1;
@@ -17,7 +14,7 @@ const ViewCentral = styled.SafeAreaView`
   
 `;
 const ListaDonate = styled.FlatList``;
-const ListaDonate2 = styled.FlatList``;
+
 
 const Grupo1 = styled.View`
 flex:1;
@@ -60,32 +57,27 @@ background-color:#008F95;
 flex:1;
 
 `;
-
+const Text = styled.Text`
+fontSize:20px;`;
 
 
 const DonateP = (props) => {
-  const [items, setItems] = useState(ListaD);
-  const [doacoes, setDoacoes] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-
+  useEffect(() => {
+    fetch('http://192.168.25.2:3000/doacoes')
+      .then((response) => response.json())
+      .then((json) => setData(json.date))
+      
+  }, []);
   const IrDonates = () => {
     props.navigation.navigate('DonateL');
   }
   const IrRegras = () => {
     props.navigation.navigate('DonateR');
   }
-  async function ListarDoacoes() {
-    const response = await api.get('get');
-
-    setDoacoes(response.data);
-  }
-
-
-
-  useEffect(() => {
-    ListarDoacoes
-  }, []);
-
+  
 
   return (
     <ViewCentral>
@@ -98,9 +90,11 @@ const DonateP = (props) => {
           </TextButton>
         </Grupo2>
         <ListaDonate
-          data={items}
-          renderItem={({ item }) => <DonateList data={item} />}
-          keyExtractor={(item) => item.id}
+          data={data}
+          keyExtractor={({ id }, index) => id}
+          renderItem={({ item }) => (
+            <Text>{item.date}, {item.local}</Text>
+          )}
         />
 
 
@@ -117,7 +111,13 @@ const DonateP = (props) => {
 }
 DonateP.navigationOptions = () => {
   return {
-    title: 'Exames'
+    title: 'Doacao de Sangue',
+    headerStyle: {
+      backgroundColor: '#00C2CB',
+      height: 80,
+    },
+    headerTintColor: '#fff',
+    headerTitleAlign: 'center',
   }
 }
 

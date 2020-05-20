@@ -67,7 +67,7 @@ const SenhaLost = (props) => {
   return (
     <ViewLogin>
       <Image source={require('../assets/seringa.png')}
-        style={{ width: 50, height: 50 }} />
+        style={{ width: 150, height: 150 }} />
       <BVtexto>Informe seu Email</BVtexto>
       <TextSenhaE>Enviaremos um link para recuperar a sua senha</TextSenhaE>
       <TextLogin>E-mail</TextLogin>

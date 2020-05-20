@@ -13,7 +13,7 @@ flex-direction:row;
 const CustomTabBarButton = styled.TouchableOpacity`
 flex:1;
 justify-content:center;
-align-items:center;
+padding-left:15px;
 `;
 
 const CustomTabBarText= styled.Text`

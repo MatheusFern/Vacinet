@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { Image } from 'react-native';
+import { connect } from 'react-redux';
+
 
 const ViewLogin = styled.SafeAreaView`
 flex:1;
@@ -56,54 +58,70 @@ padding:10px;
 
 
 const Screen = (props) => {
-  const [email, setEmail] = useState('');
+
   const [senha, setSenha] = useState('');
-  
+
   const IrHome = () => {
     props.navigation.navigate('Home');
   }
   const IrSenha = () => {
     props.navigation.navigate('SenhaLost');
   }
-  
+
   return (
     <ViewLogin>
       <Image source={require('../assets/seringa.png')}
-        style={{ width: 50, height: 50 }} />
+        style={{ width: 130, height: 130 }} />
       <BVtexto>Bem vindo de volta!</BVtexto>
 
       <TextLogin>E-mail</TextLogin>
       <InputEmail
-        value={email} onChangeText={e=>setEmail(e)}
+        value={props.email} onChangeText={e => props.setEmail(e)}
         placeholder="usario@gmail.con"
       />
       <TextLogin>Senha</TextLogin>
       <InputSenha
-        value={senha} onChangeText={e=>setSenha(e)}
+        value={props.senha} onChangeText={e => props.setSenha(e)}
         placeholder="******"
       />
 
-      <Buttao onPress={IrSenha}>  
-      <TextSenhaE>Esqueceu sua senha?</TextSenhaE>
-      </Buttao> 
+      <Buttao onPress={IrSenha}>
+        <TextSenhaE>Esqueceu sua senha?</TextSenhaE>
+      </Buttao>
 
       <ButtonView>
         <InputB
           onPress={IrHome}
           title={"login"}
           color="#00C2CB"
-          
+
         />
 
       </ButtonView>
+
     </ViewLogin>
 
   )
 }
 
 Screen.navigationOptions = () => {
-  return{
-    title:'login'
+  return {
+    title: 'login'
   }
 }
-export default Screen;
+
+const mapStateToProps = (state) => {
+  return {
+    email: state.userReducer.email,
+    senha: state.userReducer.senha
+  };
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    setEmail: (email) => dispatch({ type: 'SET_EMAIL', payload: { email: email } }),
+    setSenha: (senha) => dispatch({ type: 'SET_SENHA', payload: { senha: senha } })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Screen);

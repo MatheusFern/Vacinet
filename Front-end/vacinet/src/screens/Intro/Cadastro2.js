@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { connect } from 'react-redux';
 
 const Cadastro = styled.SafeAreaView`
 flex:1;
@@ -46,12 +47,12 @@ const BtnView = styled.View`
 
 
 const CadastroSub = (props) => {
-   
-  
+
+
   const Cadastro2 = () => {
     props.navigation.navigate('Home');
-   }
-  
+  }
+
   return (
     <Cadastro>
       <Scroll>
@@ -60,38 +61,64 @@ const CadastroSub = (props) => {
         <Text>Tipo sanguineo</Text>
         <InputT
           placeholder="Informe seu tipo sanguineo"
+          value={props.SaudeGS} onChangeText={e => props.setSaudeGS(e)}
         />
 
         <Text>Restricao Alergica</Text>
         <InputT
           placeholder="Informe se possui restricao alergica"
+          value={props.SaudeAR} onChangeText={e => props.setSaudeAR(e)}
         />
 
         <Text>Medicamentos</Text>
         <InputT
           placeholder="Informe se toma algum medicamento"
+          value={props.SaudeMED} onChangeText={e => props.setSaudeMED(e)}
         />
         <Text>Problemas de Saude</Text>
         <InputT
           placeholder="Informe se possui problema de saude"
+          value={props.saudeP} onChangeText={e => props.setSaudeP(e)}
+
         />
-        
+
         <BtnView>
-        <CadastrarBTN title={"Cadastrar"} 
-        onPress={Cadastro2}
-        color='#00C2CB'
-        />
+          <CadastrarBTN title={"Cadastrar"}
+            onPress={Cadastro2}
+            color='#00C2CB'
+          />
         </BtnView>
       </Scroll>
     </Cadastro>
   )
 }
 
-CadastroSub.navigationOptions = () =>{
-  return{
-    title:'Cadastro2'
+CadastroSub.navigationOptions = () => {
+  return {
+    title: 'Cadastro2'
 
   }
 };
 
-export default CadastroSub;
+const mapStateToProps = (state) => {
+  return {
+    saudeP:state.healthReducer.saudeP,
+    SaudeAR:state.healthReducer.SaudeAR,
+    SaudeGS:state.healthReducer.SaudeGS,
+    SaudeMED:state.healthReducer.SaudeMED
+
+  };
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    setSaudeP: (saudeP) => dispatch({ type: 'SET_SAUDEP', payload: { saudeP: saudeP } }),
+    setSaudeAR: (SaudeAR) => dispatch({ type: 'SET_SAUDEAR', payload: { SaudeAR: SaudeAR } }),
+    setSaudeGS: (SaudeGS) => dispatch({ type: 'SET_SAUDEGS', payload: { SaudeGS: SaudeGS } }),
+    setSaudeMED: (SaudeMED) => dispatch({ type: 'SET_SAUDEMED', payload: { SaudeMED: SaudeMED } })
+
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(CadastroSub);

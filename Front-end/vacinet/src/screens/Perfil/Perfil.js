@@ -9,6 +9,8 @@ flexDirection:column;
 justifyContent:space-between;
 alignItems:center;
 `;
+const ContainerB = styled.TouchableOpacity``;
+
 
 const Text = styled.Text`
 textAlign: center;
@@ -32,11 +34,16 @@ color:#00C2CB;
 font-weight:bold;
 `;
 
-const Perfil =  () => {
+const Perfil = (props) => {
+  const IrData = () => {
+    props.navigation.navigate('MyData');
+  }
+  
+  
   return (
     <ViewPerfil>
       <Image source={require('../assets/seringa.png')}
-        style={{ width: 55, height: 55 }}
+        style={{ width: 130, height: 130 }}
         resizeMode="center"
 
       />
@@ -46,7 +53,9 @@ const Perfil =  () => {
       />
       <TextPerfil>[usario]</TextPerfil>
       <GroupText>
-        <Text>Meus Dados</Text>
+        <ContainerB onPress={IrData} >
+          <Text>Meus Dados</Text>
+        </ContainerB>
         <Text>Mensagens</Text>
         <Text>Ouvidoria</Text>
         <Text>Sobre</Text>
@@ -57,9 +66,9 @@ const Perfil =  () => {
   )
 }
 
-Perfil.navigationOptions = () =>{
-  return{
-    title:'Perfil',
+Perfil.navigationOptions = () => {
+  return {
+    title: 'Perfil',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

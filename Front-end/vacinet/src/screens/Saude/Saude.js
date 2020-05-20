@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { connect } from 'react-redux';
+
 
 const Cadastro = styled.SafeAreaView`
 flex:1;
@@ -43,44 +45,34 @@ padding-top:25px;
 
 const BtnView = styled.View`
 `;
-const Saude = () =>{
+const Saude = (props) => {
   return (
     <Cadastro>
       <Scroll>
         <TituloText>Minha Saude</TituloText>
 
-        <Text>Problemas de Saude</Text>
-        <InputT
-          placeholder="Informe se possui problema de saude"
-        />
+        <Text>Problemas de Saude {props.saudeP}</Text>
 
-        <Text>Alergias e reacoes </Text>
-        <InputT
-          placeholder="Informe se possui alergia "
-        />
 
-        <Text>Grupo Sanguineo</Text>
-        <InputT
-          placeholder="Qual o seu tipo Sanguineo"
-        />
-        <Text>Peso em Kg</Text>
-        <InputT
-          placeholder="Informe seu Peso em Kilogrmas"
-        />
-        <Text>Altura em CM</Text>
-        <InputT
-          placeholder="Informe sua Altura"
-        />
+        <Text>Alergias e reacoes{props.SaudeAR} </Text>
+
+
+        <Text>Grupo Sanguineo {props.SaudeGS}</Text>
+
+        <Text>medicamentos {props.SaudeMED}</Text>
+
+        
+
         <Text>Contatos de Emergencia</Text>
-       
+
       </Scroll>
     </Cadastro>
   )
 }
 
-Saude.navigationOptions = () =>{
-  return{
-    title:'Minha Saude',
+Saude.navigationOptions = () => {
+  return {
+    title: 'Minha Saude',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,
@@ -91,4 +83,22 @@ Saude.navigationOptions = () =>{
   }
 };
 
-export default Saude;
+const mapStateToProps = (state) => {
+  return {
+    saudeP: state.healthReducer.saudeP,
+    SaudeAR: state.healthReducer.SaudeAR,
+    SaudeGS: state.healthReducer.SaudeGS,
+    Saudepeso: state.healthReducer.Saudepeso,
+    SaudeMED: state.healthReducer.SaudeMED
+
+  };
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Saude);
