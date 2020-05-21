@@ -25,9 +25,9 @@ const DonateList = (props) => {
   return (
     <BoxView>
       <GroupText>
-      <Texto>Dada da doacao: {props.data.Data}</Texto>
-      <Texto>Local da doacao:{props.data.Local}</Texto>
-      <Texto>Bolsas de sangue doadas: {props.data.Bolsas}</Texto>
+      <Texto>Dada da doacao: {props.data.date}</Texto>
+      <Texto>Local da doacao:{props.data.local}</Texto>
+      <Texto>Bolsas de sangue doadas: {props.data.qntBolsas}</Texto>
       </GroupText>
     </BoxView>
   )

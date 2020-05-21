@@ -18,41 +18,53 @@ const PerguntaTexto = styled.Text`
   textAlign: center;
   fontSize:25px;
 `;
-const SButon = styled.Button`
-  
+const Text = styled.Text`
+padding-top:10px;
+fontSize:15px;
+color:#FFF;
+
+`;
+const SButon = styled.TouchableOpacity`
+  backgroundColor:#00C2CB;
+  width: 200px;
+  alignItems:center;
+  height: 45px;
+  borderRadius:35px;
 `;
 
 
-const Screen = (props) =>  {
-  
+const Screen = (props) => {
+
   const IrLogin = () => {
     props.navigation.navigate('Login');
   }
   const IrCadastro = () => {
     props.navigation.navigate('Cadastro');
   }
-  
+
   return (
     <BVview>
       <Image source={require('../assets/seringa.png')}
-        style={{ width: 150, height: 150}} />
+        style={{ width: 150, height: 150 }} />
       <BVtexto>Bem vindo(a)</BVtexto>
       <PerguntaTexto>Ja e cadastrado</PerguntaTexto>
-      <SButon title={"Ja sou cadastrado"} 
-      color='#00C2CB'
-      onPress={IrLogin}
-      />
-      <SButon title={"Nao sou cadastrado"}
-      color='#00C2CB' 
-      onPress={IrCadastro}
-      />
+      <SButon onPress={IrLogin}
+      >
+        <Text>Ja sou cadastrado</Text>
+
+      </SButon>
+
+      <SButon onPress={IrCadastro}>
+        <Text>Nao sou cadastrado</Text>
+      </SButon>
+
     </BVview>
   )
 }
 
-Screen.navigationOptions = () =>{
-  return{
-    title:''
+Screen.navigationOptions = () => {
+  return {
+    title: ''
 
   }
 };

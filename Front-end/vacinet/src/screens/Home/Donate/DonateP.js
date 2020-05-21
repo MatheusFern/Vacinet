@@ -22,7 +22,7 @@ flex:1;
 
 const TextT = styled.Text`
   textAlign: left;
-  fontSize:25px;
+  fontSize:20px;
   font-weight:bold;
   padding:13px;
 `;
@@ -69,6 +69,8 @@ const DonateP = (props) => {
     fetch('http://192.168.25.2:3000/doacoes')
       .then((response) => response.json())
       .then((json) => setData(json.date))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
       
   }, []);
   const IrDonates = () => {
@@ -100,7 +102,7 @@ const DonateP = (props) => {
 
         
 
-        <TextT>Doacoes:</TextT>
+        <TextT>Registrar Doacao de sangue</TextT>
         <Add onPress={IrDonates}>
           <Plus>+</Plus>
         </Add>

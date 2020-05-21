@@ -7,21 +7,30 @@ flex:1;
 flexDirection:column;
 justifyContent:space-around;
 alignItems:center;
+background-color:#FFF;
 `;
 const Text = styled.Text`
 textAlign: center;
   fontSize:20px;
   padding: 10px
 `;
+const Background = styled.View`
+width:90%;
+alignItems:flex-start;
+border-radius:15px;
+background-color:#EEE;
+`;
 
 const Mydata = (props) => {
   return (
     <Container>
+      <Background>
       <Text>Nome: {props.nome}</Text>
       <Text>CPF: {props.cpf}</Text>
       <Text>Data de Nascimento: {props.data}</Text>
       <Text>Telefone {props.telefone}</Text>
       <Text>Email: {props.email} </Text>
+      </Background>
     </Container>
   )
 }

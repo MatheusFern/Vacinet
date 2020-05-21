@@ -37,12 +37,19 @@ padding-bottom:10px;
 
 
 
-const CadastrarBTN = styled.Button`
-border-radius:25px;
-padding-top:25px;
+const CadastrarBTN = styled.Text`
+padding-top:10px;
+fontSize:15px;
+color:#FFF;
+
 `;
 
-const BtnView = styled.View`
+const BtnView = styled.TouchableOpacity`
+backgroundColor:#00C2CB;
+  width: 200px;
+  alignItems:center;
+  height: 45px;
+  borderRadius:35px;
 `;
 
 
@@ -82,11 +89,8 @@ const CadastroSub = (props) => {
 
         />
 
-        <BtnView>
-          <CadastrarBTN title={"Cadastrar"}
-            onPress={Cadastro2}
-            color='#00C2CB'
-          />
+        <BtnView onPress={Cadastro2}>
+          <CadastrarBTN>Cadastrar</CadastrarBTN>
         </BtnView>
       </Scroll>
     </Cadastro>
