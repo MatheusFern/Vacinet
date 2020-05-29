@@ -7,6 +7,7 @@ import Transplant from '../screens/Home/Transplant';
 import Exams from '../screens/Home/Exams';
 import DonateL from '../screens/Home/Donate/DonateL';
 import DonateR from '../screens/Home/Donate/DonateR';
+import AddExame from '../screens/Home/AddExame' ;
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -29,6 +30,9 @@ const HomeStack = createStackNavigator({
   },
   DonateR:{
     screen:DonateR
+  },
+  AddExame:{
+    screen:AddExame
   }
 
 });

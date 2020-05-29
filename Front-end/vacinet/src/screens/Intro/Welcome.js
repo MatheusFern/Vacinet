@@ -47,7 +47,7 @@ const Screen = (props) => {
       <Image source={require('../assets/seringa.png')}
         style={{ width: 150, height: 150 }} />
       <BVtexto>Bem vindo(a)</BVtexto>
-      <PerguntaTexto>Ja e cadastrado</PerguntaTexto>
+      <PerguntaTexto>Ja é cadastrado ?</PerguntaTexto>
       <SButon onPress={IrLogin}
       >
         <Text>Ja sou cadastrado</Text>
@@ -55,7 +55,7 @@ const Screen = (props) => {
       </SButon>
 
       <SButon onPress={IrCadastro}>
-        <Text>Nao sou cadastrado</Text>
+        <Text>Não sou cadastrado</Text>
       </SButon>
 
     </BVview>

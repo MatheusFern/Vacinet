@@ -6,16 +6,20 @@ const Cadastro = styled.SafeAreaView`
 flex:1;
 flex-direction:column;
 margin:20px;
+justifyContent:center;
 `;
 
 const Scroll = styled.ScrollView`
 flex:1;
+
 `;
 
 const TituloText = styled.Text`
 font-size:35px;
 padding: 15px;
 textAlign:center;
+color:#008F95
+font-weight:bold;
 `;
 
 const Text = styled.Text`
@@ -50,6 +54,8 @@ backgroundColor:#00C2CB;
   alignItems:center;
   height: 45px;
   borderRadius:35px;
+  align-self:center;
+  margin-top:15px;
 `;
 
 
@@ -62,6 +68,7 @@ const CadastroSub = (props) => {
 
   return (
     <Cadastro>
+      
       <Scroll>
         <TituloText>Cadastro Ficha medica</TituloText>
 

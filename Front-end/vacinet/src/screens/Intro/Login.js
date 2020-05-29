@@ -47,15 +47,24 @@ color:#00C2CB;`;
 const ButtonView = styled.View`
 padding-top:10px;
 `;
-const InputB = styled.Button`
-
+const InputB = styled.TouchableOpacity`
+backgroundColor:#00C2CB;
+  width: 200px;
+  alignItems:center;
+  height: 45px;
+  borderRadius:35px;
 
 `;
 const Buttao = styled.TouchableOpacity`
 padding:10px;
 
 `;
+const TextB = styled.Text`
+padding-top:10px;
+fontSize:15px;
+color:#FFF;
 
+`;
 
 const Screen = (props) => {
 
@@ -67,7 +76,7 @@ const Screen = (props) => {
   const IrSenha = () => {
     props.navigation.navigate('SenhaLost');
   }
-
+ 
   return (
     <ViewLogin>
       <Image source={require('../assets/seringa.png')}
@@ -90,12 +99,9 @@ const Screen = (props) => {
       </Buttao>
 
       <ButtonView>
-        <InputB
-          onPress={IrHome}
-          title={"login"}
-          color="#00C2CB"
-
-        />
+        <InputB onPress={IrHome}>
+          <TextB>LOGIN</TextB>
+        </InputB>
 
       </ButtonView>
 

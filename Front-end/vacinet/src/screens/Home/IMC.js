@@ -49,10 +49,19 @@ font-size:15px;
 margin-bottom:30px;
 `;
 
-const CalcularB = styled.Button`
-padding-top: 25px;
+const CalcularB = styled.TouchableOpacity`
+backgroundColor:#00C2CB;
+  width: 200px;
+  alignItems:center;
+  height: 45px;
+  borderRadius:35px;
+  align-self:center;
+  margin-top:15px;
 `;
-
+const TextB = styled.Text`
+padding-top:10px;
+fontSize:15px;
+color:#FFF;`;
 const IMC = () => {
 
   //pega os valores
@@ -91,7 +100,9 @@ const IMC = () => {
       />
 
 
-      <CalcularB title={"Calcular"} onPress={calc} />
+      <CalcularB >
+        <TextB>Calcular</TextB>
+      </CalcularB>
       {imc > 0 &&
         <ResultArea>
           <ResultItemTittle>Seu IMC</ResultItemTittle>

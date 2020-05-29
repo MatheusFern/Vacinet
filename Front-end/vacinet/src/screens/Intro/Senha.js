@@ -5,7 +5,7 @@ import { Image } from 'react-native';
 const ViewLogin = styled.SafeAreaView`
 flex:1;
 flex-direction:column;
-justifyContent:center;
+justifyContent:space-evenly;
 align-items:center;
 margin:20px;
 `;
@@ -41,17 +41,26 @@ padding:10px;
 `;
 const TextSenhaE = styled.Text`
 font-size: 20px;
-color:#00C2CB;`;
+color:#00C2CB;
+textAlign: center;
+`;
 
 const ButtonView = styled.View`
 padding-top:10px;
 `;
-const InputB = styled.Button`
 
+const Text = styled.Text`
+padding-top:10px;
+fontSize:15px;
+color:#FFF;
 
 `;
 const Buttao = styled.TouchableOpacity`
-padding:10px;
+backgroundColor:#00C2CB;
+  width: 200px;
+  alignItems:center;
+  height: 45px;
+  borderRadius:35px;
 
 `;
 
@@ -77,16 +86,10 @@ const SenhaLost = (props) => {
       />
 
 
-
-      <ButtonView>
-        <InputB
-          onPress={IrHome}
-          title={"Retornar"}
-          color="#00C2CB"
-
-        />
-
-      </ButtonView>
+<Buttao onPress={IrHome}>
+  <Text>Retornar</Text>
+</Buttao>
+      
     </ViewLogin>
 
   )

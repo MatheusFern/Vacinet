@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/native';
 
 const Container = styled.SafeAreaView`
@@ -12,39 +12,88 @@ textAlign: left;
   font-weight:bold;
   padding:13px;
 `;
-const GroupItens = styled.View`
-margin-left:15px;
-width:90%;
-background-color:#FFF;
-padding :13px;
-border-radius:15px;
-
-
-`;
-const TextT = styled.Text`
-fontSize:20px;
-  font-weight:bold;
-`;
-const Text = styled.Text`
-fontSize:20px;
+const TextTitulo = styled.Text`
+textAlign: center;
+fontSize:30px;
 font-weight:bold;
+padding:13px;
+color:#FFF;
+`;
+const ListaCartao = styled.FlatList``;
+
+const Text = styled.Text`
+color:#FFF;
+fontSize:20px;
+padding:5px;
+`;
+const ContainerList = styled.View`
+background-color:#00C2CB;
+flex:1;
+border-radius:15px;
+margin:10px;
+`;
+const Add = styled.TouchableOpacity`
+height: 45px;
+width: 45px;
+background-color:#00C2CB;
+border-radius:15px;
+margin-left:15px;
+`;
+const Plus = styled.Text`
+  textAlign: center;
+  fontSize:25px;
+  color:white;
+  font-weight:bold;
+  padding-top:2px;
 `;
 
-const Cartao = () => {
+
+const Cartao = (props) => {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    fetch('http://192.168.25.2:3333/cartaoVacina')
+      .then((response) => response.json())
+      .then((json) => setData(json.cartaoVacina))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+
+  }, []);
+  const Ircadastrar = () =>{
+    props.navigation.navigate('AddVacina')
+  }
+
+
   return (
     <Container>
-      <TextRegistro  >Ultimas Vacinas</TextRegistro>
+      <TextRegistro >Ultimas Vacinas</TextRegistro>
+      <ListaCartao
+      data={data}
+      keyExtractor={({ id }, index) => id}
+      renderItem = {({item})=>(
+        <ContainerList>
+          <TextTitulo>{item.nomeVacina}</TextTitulo>
+          <Text>Data da Vacina: {item.dataVacinacao}</Text>
+          <Text>Lote da Vacina: {item.lote}</Text>
+          <Text>Validade da Vacina: {item.validade}</Text>
+          <Text>Aplicador: {item.aplicador}</Text>
 
-      <GroupItens>
-        <TextT>Vacina contra Tetano </TextT>
-        <Text>Data:21/06/2019</Text>
-        <Text>Hora: 13:17 </Text>
-        
-      </GroupItens>
+        </ContainerList>
+
+      )}
+      />
+      <Add onPress={Ircadastrar} >
+        <Plus>+</Plus>
+      </Add>
+      
       
     </Container>
   )
 }
+
+
+
 Cartao.navigationOptions = () =>{
   return{
     title:'Ultimas vacinas',

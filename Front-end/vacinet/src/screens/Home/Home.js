@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-
+import { Image } from 'react-native';
 
 
 const Container = styled.SafeAreaView`
@@ -19,18 +19,22 @@ flexWrap:wrap;
 
 `;
 const Itens = styled.TouchableOpacity`
-height: 170px;
-width: 170px;
-margin: 18px;
+height: 175px;
+width: 175px;
+margin: 15px;
 justifyContent:center;
-background-color:#008F95;
+background-color:#00C2CB;
 border-radius:25px;
 
 `;
 const Texto = styled.Text`
 textAlign: center;
-  fontSize:25px;
+  fontSize:20px;
   color:white;
+`;
+const ImageButton = styled.Image`
+alignItems:stretch;
+align-self:center;
 `;
 
 const Home = (props) => {
@@ -53,15 +57,31 @@ const Home = (props) => {
     <Container>
       <BodyHome>
         <Itens onPress={IrIMC}>
-          <Texto>calculo de IMC </Texto>
+          <ImageButton source={require('../assets/icons/I.png')}
+            style={{ width: 120, height: 120 }}
+            
+          />
+          <Texto>IMC</Texto>
         </Itens>
         <Itens onPress={IrDonate}>
+        <ImageButton source={require('../assets/icons/D.png')}
+            style={{ width: 120, height: 120 }}
+            
+          />
           <Texto>Doacao de Sangue</Texto>
         </Itens>
         <Itens onPress={IrExamns}>
+        <ImageButton source={require('../assets/icons/E.png')}
+            style={{ width: 120, height: 120 }}
+            
+          />
           <Texto>Exames</Texto>
         </Itens>
         <Itens onPress={IrTransplant}>
+        <ImageButton source={require('../assets/icons/T.png')}
+            style={{ width: 120, height: 120 }}
+            
+          />
           <Texto>Transplante</Texto>
         </Itens>
       </BodyHome>

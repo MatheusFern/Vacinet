@@ -8,7 +8,7 @@ flex:1;
 flex-direction:column;
 justifyContent:center;
 padding-left:10px;
-
+padding-right:10px;
 `;
 const Container = styled.View`
 
@@ -36,8 +36,8 @@ const InputT = styled.TextInput`
 width:100%;
 
 font-size: 18px;
-background-color:#ddd;
-margin-top:5px;
+background-color:#eee;
+margin-top:20px;
 border-radius:10px;
 padding:10px;
 padding-bottom:10px;
@@ -57,6 +57,8 @@ const BtnView = styled.TouchableOpacity`
   alignItems:center;
   height: 45px;
   borderRadius:35px;
+  align-self:center;
+  margin-top:10px;
 `;
 
 

@@ -7,6 +7,7 @@ const Cadastro = styled.SafeAreaView`
 flex:1;
 flex-direction:column;
 margin:20px;
+justifyContent:center;
 `;
 
 const Scroll = styled.ScrollView`
@@ -17,12 +18,16 @@ const TituloText = styled.Text`
 font-size:40px;
 padding: 15px;
 textAlign:center;
+color:#FFF;
+font-weight:bold;
 `;
 
 const Text = styled.Text`
-font-size:18px;
+font-size:25px;
 font-weight:bold;
 padding-top:5px;
+color:#FFF;
+padding-left:10px;
 `;
 
 const InputT = styled.TextInput`
@@ -43,29 +48,36 @@ border-radius:25px;
 padding-top:25px;
 `;
 
-const BtnView = styled.View`
+const Container = styled.View`
+border-radius:15px;
+background-color:#00C2CB;
+
+
 `;
 const Saude = (props) => {
   return (
     <Cadastro>
-      <Scroll>
+      <Container>
+      
         <TituloText>Minha Saude</TituloText>
 
-        <Text>Problemas de Saude {props.saudeP}</Text>
+        <Text>Problemas de Saude: {props.saudeP}</Text>
 
 
-        <Text>Alergias e reacoes{props.SaudeAR} </Text>
+        <Text>Alergias e reacoes: {props.SaudeAR} </Text>
 
 
-        <Text>Grupo Sanguineo {props.SaudeGS}</Text>
+        <Text>Grupo Sanguineo: {props.SaudeGS}</Text>
 
-        <Text>medicamentos {props.SaudeMED}</Text>
+        <Text>Medicamentos: {props.SaudeMED}</Text>
 
         
 
         <Text>Contatos de Emergencia</Text>
-
-      </Scroll>
+        <Text>NANDO VIANA</Text>
+        <Text>FABIANO COMBOTA</Text>
+      
+      </Container>
     </Cadastro>
   )
 }
