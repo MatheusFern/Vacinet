@@ -107,17 +107,18 @@ const DonateP = (props) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false)
+  const [item, setItem] = useState({})
 
-  const mostrar = () => {
-
+  const mostrar = (item) => {
+    setItem(item)
+    console.log(item,"item")
     setModalVisible(true)
   }
   
-  const Deletar = (id) => {
-     
-    axios.delete('http://192.168.25.2:3333/doacoes/delete/${id}' + id)
-   .then(res => console.log(res.data))
-
+  const Deletar = async () => {
+    const response = await axios.delete(`http://192.168.25.2:3333/doacoes/delete/${item._id}`)
+    console.log(item.id, 'id')
+    console.log(response, 'response')
   }
 
   
@@ -157,7 +158,7 @@ const DonateP = (props) => {
           data={data}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <Grupo3 onPress={mostrar}>
+            <Grupo3 onPress={() => mostrar(item)}>
               <Text>Data da doacao:{item.date}</Text>
               <Text>Local:{item.local}</Text>
               <Text>Quantide de bolsas doadas:{item.qntBolsas}</Text>
