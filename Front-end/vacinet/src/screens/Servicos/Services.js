@@ -58,13 +58,13 @@ const Services = (props) => {
           <Texto>Hospitais </Texto>
         </Itens>
         <Itens onPress={IrPostos}>
-          <Texto>Postos de saude</Texto>
+          <Texto>Postos de Saúde</Texto>
         </Itens>
         <Itens onPress={IrUrgencia}>
-          <Texto>Servicos de urgencia</Texto>
+          <Texto>Serviços de Urgência</Texto>
         </Itens>
         <Itens onPress={IrFarmacias} >
-          <Texto>Farmacia popular</Texto>
+          <Texto>Farmácia Popular</Texto>
         </Itens>
       </BodyHome>
     </Container>
@@ -74,7 +74,7 @@ const Services = (props) => {
 
 Services.navigationOptions = () => {
   return {
-    title: 'servicos ',
+    title: 'Serviços ',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

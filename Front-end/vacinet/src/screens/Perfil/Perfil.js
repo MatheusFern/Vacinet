@@ -51,7 +51,7 @@ const Perfil = (props) => {
 
         resizeMode="center"
       />
-      <TextPerfil>[usario]</TextPerfil>
+      <TextPerfil>[usúario]</TextPerfil>
       <GroupText>
         <ContainerB onPress={IrData} >
           <Text>Meus Dados</Text>

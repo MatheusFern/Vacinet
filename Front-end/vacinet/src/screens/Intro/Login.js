@@ -100,7 +100,7 @@ const Screen = (props) => {
 
       <ButtonView>
         <InputB onPress={IrHome}>
-          <TextB>LOGIN</TextB>
+          <TextB>Login</TextB>
         </InputB>
 
       </ButtonView>

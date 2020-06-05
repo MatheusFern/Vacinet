@@ -111,7 +111,7 @@ const registrar = () =>{
       onChangeText={h => sethrExame(h)}
     />
     <Button onPress={registrar}>
-      <TextB>registrar</TextB>
+      <TextB>Registrar</TextB>
     </Button>
     
     <Modal
@@ -123,7 +123,7 @@ const registrar = () =>{
           <BoxBody>
             <TextoTitulo>Exame Registrado</TextoTitulo>
             <ButtonBack onPress={()=>setModalVisible(false)}>
-              <Text>VOLTAR</Text>
+              <Text>Voltar</Text>
             </ButtonBack>
 
           </BoxBody>

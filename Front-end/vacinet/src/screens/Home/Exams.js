@@ -77,6 +77,13 @@ const TextoTitulo = styled.Text`
   font-weight:bold;
   padding:13px;
 `;
+const TextT = styled.Text`
+  textAlign: left;
+  fontSize:20px;
+  font-weight:bold;
+  padding:13px;
+`;
+
 
 const Exams = (props) => {
   const [isLoading, setLoading] = useState(true);
@@ -122,7 +129,7 @@ const IrAddExames =() => {
       <TextTitulo>Meus Exames</TextTitulo>
       <ListaExame
         data={data}
-        keyExtractor={({ id }, index) => id}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <ContainerList onPress={() => mostrar(item)} >
             <Text>Data do Exame: {item.date}</Text>
@@ -140,11 +147,11 @@ const IrAddExames =() => {
             <BoxBody>
               <TextoTitulo>Deletar Exame?</TextoTitulo>
               <ButtonBack2 onPress={Deletar}>
-                <Text>DELETAR</Text>
+                <Text>Deletar</Text>
               </ButtonBack2>
 
               <ButtonBack onPress={() => setModalVisible(false)}>
-                <Text>VOLTAR</Text>
+                <Text>Voltar</Text>
               </ButtonBack>
 
             </BoxBody>
@@ -153,7 +160,7 @@ const IrAddExames =() => {
 
 
 
-
+        <TextT>Registrar Exame</TextT>
       <Add onPress={IrAddExames} >
         <Plus>+</Plus>
       </Add>

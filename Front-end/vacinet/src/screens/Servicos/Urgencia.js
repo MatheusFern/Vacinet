@@ -45,7 +45,7 @@ const Urgencia = () => {
 }
 Urgencia.navigationOptions = () => {
   return {
-    title: 'Urgencia',
+    title: 'Urgência',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

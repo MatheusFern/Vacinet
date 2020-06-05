@@ -68,7 +68,7 @@ const Home = (props) => {
             style={{ width: 120, height: 120 }}
             
           />
-          <Texto>Doacao de Sangue</Texto>
+          <Texto>Doação de Sangue</Texto>
         </Itens>
         <Itens onPress={IrExamns}>
         <ImageButton source={require('../assets/icons/E.png')}
@@ -92,7 +92,7 @@ const Home = (props) => {
 
 Home.navigationOptions = () => {
   return {
-    title: 'Ola [usuario]',
+    title: 'Olá [usuario]',
 
     headerStyle: {
       backgroundColor: '#00C2CB',

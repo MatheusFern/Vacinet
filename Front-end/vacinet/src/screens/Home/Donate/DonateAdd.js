@@ -110,7 +110,7 @@ export default (props) => {
     <ViewCentral>
       <TextoTitulo>Data:</TextoTitulo>
       <Input
-        placeholder="Insira a data da doacao"
+        placeholder="Insira a data da doação"
         value={dia}
         onChangeText={e => setDatas(e)}
 
@@ -118,7 +118,7 @@ export default (props) => {
       />
       <TextoTitulo>Local:</TextoTitulo>
       <Input
-        placeholder="Insira o local da doacao"
+        placeholder="Insira o local da doação"
         onChangeText={f => setLocal(f)}
         value={local}
       />
@@ -134,7 +134,7 @@ export default (props) => {
        
         
       <Button onPress={cadastrar}>
-        <TextB>registrar</TextB>
+        <TextB>Registrar</TextB>
       </Button>
       <Modal
         visible={modalVisible}
@@ -143,9 +143,9 @@ export default (props) => {
       >
         <Box>
           <BoxBody>
-            <TextoTitulo>Doacao Registrada</TextoTitulo>
+            <TextoTitulo>Doação Registrada</TextoTitulo>
             <ButtonBack onPress={()=>setModalVisible(false)}>
-              <Text>VOLTAR</Text>
+              <Text>Voltar</Text>
             </ButtonBack>
 
           </BoxBody>

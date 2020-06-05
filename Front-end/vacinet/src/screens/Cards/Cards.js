@@ -34,14 +34,14 @@ const Cards = (props) => {
     <Container>
       
       <Button onPress={IrCartao}>
-        <Text>crianca</Text>
+        <Text>Criança</Text>
       </Button>
       <Button onPress={IrCartao}>
-        <Text>adulto</Text>
+        <Text>Adulto</Text>
 
       </Button>
       <Button onPress={IrCartao}>
-        <Text>idoso</Text>
+        <Text>Idoso</Text>
 
       </Button>
       
@@ -50,7 +50,7 @@ const Cards = (props) => {
 }
 Cards.navigationOptions = () =>{
   return{
-    title:'Cartao',
+    title:'Cartão de Vacina',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

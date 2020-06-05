@@ -14,7 +14,7 @@ const DonateL = () => {
 }
 DonateL.navigationOptions = () => {
   return {
-    title: 'Registrar Doacao de sangue',
+    title: 'Registrar Doação de sangue',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

@@ -39,9 +39,9 @@ const MainNavigator = createBottomTabNavigator({
         {...props}
         items={[
           { text: 'Home', route: 'Home' },
-          { text: 'Minha Saude', route: 'MinhaSaude' },
-          { text: 'Cartao', route: 'Cartao' },
-          { text: 'Servicos', route: 'Servicos' },
+          { text: 'Minha Saúde', route: 'MinhaSaude' },
+          { text: 'Cartão', route: 'Cartao' },
+          { text: 'Serviços', route: 'Servicos' },
           { text: 'Perfil', route: 'Perfil' }
 
         ]}

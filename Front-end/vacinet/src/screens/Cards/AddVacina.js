@@ -138,9 +138,9 @@ const AddVacina = () => {
       >
         <Box>
           <BoxBody>
-            <TextoTitulo>Vacina Registrada</TextoTitulo>
+            <TextoTitulo>Vacina Registrada!</TextoTitulo>
             <ButtonBack onPress={()=>setModalVisible(false)}>
-              <Text>VOLTAR</Text>
+              <Text>Voltar</Text>
             </ButtonBack>
 
           </BoxBody>

@@ -7,7 +7,7 @@ import axios from 'axios';
 const Container = styled.SafeAreaView`
 flex:1;
 flex-direction:column;
-
+padding:13px;
 `;
 const TextRegistro = styled.Text`
 textAlign: left;
@@ -86,6 +86,12 @@ const TextoTitulo = styled.Text`
   font-weight:bold;
   padding:13px;
 `;
+const TextT = styled.Text`
+  textAlign: left;
+  fontSize:20px;
+  font-weight:bold;
+  padding:13px;
+`;
 
 
 
@@ -123,10 +129,10 @@ const Cartao = (props) => {
 
   return (
     <Container>
-      <TextRegistro >Ultimas Vacinas</TextRegistro>
+      <TextRegistro >Últimas Vacinas</TextRegistro>
       <ListaCartao
         data={data}
-        keyExtractor={({ id }, index) => id}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <ContainerList onPress={() => mostrar(item)}>
             <TextTitulo>{item.nomeVacina}</TextTitulo>
@@ -148,11 +154,11 @@ const Cartao = (props) => {
           <BoxBody>
             <TextoTitulo>Deletar Vacina?</TextoTitulo>
             <ButtonBack2 onPress={Deletar}>
-              <Text>DELETAR</Text>
+              <Text>Deletar</Text>
             </ButtonBack2>
 
             <ButtonBack onPress={() => setModalVisible(false)}>
-              <Text>VOLTAR</Text>
+              <Text>Voltar</Text>
             </ButtonBack>
 
           </BoxBody>
@@ -160,7 +166,7 @@ const Cartao = (props) => {
       </Modal>
 
 
-
+      <TextT>Registrar Vacina</TextT>
       <Add onPress={Ircadastrar} >
         <Plus>+</Plus>
       </Add>
@@ -174,7 +180,7 @@ const Cartao = (props) => {
 
 Cartao.navigationOptions = () => {
   return {
-    title: 'Ultimas vacinas',
+    title: 'Vacinas',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

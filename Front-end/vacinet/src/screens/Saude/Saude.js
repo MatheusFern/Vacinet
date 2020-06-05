@@ -59,21 +59,21 @@ const Saude = (props) => {
     <Cadastro>
       <Container>
       
-        <TituloText>Minha Saude</TituloText>
+        <TituloText>Minha Saúde</TituloText>
 
-        <Text>Problemas de Saude: {props.saudeP}</Text>
-
-
-        <Text>Alergias e reacoes: {props.SaudeAR} </Text>
+        <Text>Problemas de Saúde: {props.saudeP}</Text>
 
 
-        <Text>Grupo Sanguineo: {props.SaudeGS}</Text>
+        <Text>Alergias e reações: {props.SaudeAR} </Text>
+
+
+        <Text>Grupo Sanguíneo: {props.SaudeGS}</Text>
 
         <Text>Medicamentos: {props.SaudeMED}</Text>
 
         
 
-        <Text>Contatos de Emergencia</Text>
+        <Text>Contatos de Emergência</Text>
         <Text>NANDO VIANA</Text>
         <Text>FABIANO COMBOTA</Text>
       
@@ -84,7 +84,7 @@ const Saude = (props) => {
 
 Saude.navigationOptions = () => {
   return {
-    title: 'Minha Saude',
+    title: 'Minha Saúde',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

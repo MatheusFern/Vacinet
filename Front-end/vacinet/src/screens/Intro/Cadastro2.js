@@ -70,15 +70,15 @@ const CadastroSub = (props) => {
     <Cadastro>
       
       <Scroll>
-        <TituloText>Cadastro Ficha medica</TituloText>
+        <TituloText>Cadastro Ficha médica</TituloText>
 
-        <Text>Tipo sanguineo</Text>
+        <Text>Tipo sanguíneo</Text>
         <InputT
           placeholder="Informe seu tipo sanguineo"
           value={props.SaudeGS} onChangeText={e => props.setSaudeGS(e)}
         />
 
-        <Text>Restricao Alergica</Text>
+        <Text>Restrição Alérgica</Text>
         <InputT
           placeholder="Informe se possui restricao alergica"
           value={props.SaudeAR} onChangeText={e => props.setSaudeAR(e)}
@@ -89,7 +89,7 @@ const CadastroSub = (props) => {
           placeholder="Informe se toma algum medicamento"
           value={props.SaudeMED} onChangeText={e => props.setSaudeMED(e)}
         />
-        <Text>Problemas de Saude</Text>
+        <Text>Problemas de Saúde</Text>
         <InputT
           placeholder="Informe se possui problema de saude"
           value={props.saudeP} onChangeText={e => props.setSaudeP(e)}

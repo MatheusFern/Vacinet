@@ -31,7 +31,7 @@ padding:20px;
 const Postos = () => {
   return (
     <Container>
-      <Text>Postos de Saude</Text>
+      <Text>Postos de Saúde</Text>
       <Groupitems>
         <TextTitulo>- USF ODORICO MELO </TextTitulo>
         <TextS>Telefone:(00) 00000-0000</TextS>
@@ -45,7 +45,7 @@ const Postos = () => {
 }
 Postos.navigationOptions = () => {
   return {
-    title: 'Postos',
+    title: 'Postos de Saúde',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

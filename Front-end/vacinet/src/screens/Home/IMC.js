@@ -83,24 +83,24 @@ const IMC = () => {
 
   return (
     <Page>
-      <TituloText> Calculo de IMC </TituloText>
+      <TituloText> Calcular meu IMC </TituloText>
 
       <InputP
-        placeholder="Qual e o seu peso"
+        placeholder="Qual é o seu peso ?"
         keyboardType="numeric"
         value={peso}
         onChangeText={p => setPeso(p)}
       />
 
       <InputA
-        placeholder="Qual a sua altura"
+        placeholder="Qual é a sua altura ?"
         keyboardType="numeric"
         value={altura}
         onChangeText={a => setAltura(a)}
       />
 
 
-      <CalcularB >
+      <CalcularB onPress={calc}>
         <TextB>Calcular</TextB>
       </CalcularB>
       {imc > 0 &&
@@ -114,7 +114,7 @@ const IMC = () => {
 }
 IMC.navigationOptions = () => {
   return {
-    title: 'calculo de IMC',
+    title: 'Calculo de IMC',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

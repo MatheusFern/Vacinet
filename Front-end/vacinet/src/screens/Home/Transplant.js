@@ -27,11 +27,11 @@ const Transplant =  (props) => {
     <ViewTransplant>
       <TextT>Ligue</TextT>
       <TextTelefone> 0800 644 6445</TextTelefone>
-      <TextT>Saiba tudo sobre Doacao</TextT>
+      <TextT>Saiba tudo sobre Doação de Orgãos</TextT>
       <GroupText>
-        <TextT>- Oque e doacao de Orgaos </TextT>
-        <TextT>- Quero ser doador de Orgaos</TextT>
-        <TextT>- Quais orgaos eu posso doar</TextT>
+        <TextT>- Oque é doação de Orgãos?</TextT>
+        <TextT>- Quero ser doador de Orgãos</TextT>
+        <TextT>- Quais orgãos eu posso doar?</TextT>
 
       </GroupText>
     </ViewTransplant>
@@ -40,7 +40,7 @@ const Transplant =  (props) => {
 
 Transplant.navigationOptions = () => {
   return {
-    title: 'Informacoes sobre transplante',
+    title: 'Informações sobre Transplante',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

@@ -119,6 +119,8 @@ const DonateP = (props) => {
     const response = await axios.delete(`http://192.168.25.2:3333/doacoes/delete/${item._id}`)
     console.log(item.id, 'id')
     console.log(response, 'response')
+  
+    setModalVisible(false)
   }
 
   
@@ -149,7 +151,7 @@ const DonateP = (props) => {
 
       <Grupo1>
         <Grupo2>
-          <TextT>Minhas doacoes</TextT>
+          <TextT>Minhas doações</TextT>
           <TextButton onPress={IrRegras}>
             <RegrasText>Regras</RegrasText>
           </TextButton>
@@ -159,9 +161,9 @@ const DonateP = (props) => {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <Grupo3 onPress={() => mostrar(item)}>
-              <Text>Data da doacao:{item.date}</Text>
+              <Text>Data da doação:{item.date}</Text>
               <Text>Local:{item.local}</Text>
-              <Text>Quantide de bolsas doadas:{item.qntBolsas}</Text>
+              <Text>Quantidade de bolsas doadas:{item.qntBolsas}</Text>
 
             </Grupo3>
 
@@ -177,18 +179,18 @@ const DonateP = (props) => {
             <BoxBody>
               <TextoTitulo>Deletar doacao?</TextoTitulo>
               <ButtonBack2 onPress={Deletar}>
-                <Text>DELETAR</Text>
+                <Text>Deletar</Text>
               </ButtonBack2>
 
               <ButtonBack onPress={() => setModalVisible(false)}>
-                <Text>VOLTAR</Text>
+                <Text>Voltar</Text>
               </ButtonBack>
 
             </BoxBody>
           </Box>
         </Modal>
 
-        <TextT>Registrar Doacao de sangue</TextT>
+        <TextT>Registrar Doação de Sangue</TextT>
         <Add onPress={IrDonates}>
           <Plus>+</Plus>
         </Add>
@@ -199,7 +201,7 @@ const DonateP = (props) => {
 }
 DonateP.navigationOptions = () => {
   return {
-    title: 'Doacao de Sangue',
+    title: 'Doação de Sangue',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,

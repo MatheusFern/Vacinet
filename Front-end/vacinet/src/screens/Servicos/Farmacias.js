@@ -31,9 +31,9 @@ padding:20px;
 const Farmacias = () => {
   return (
     <Container>
-      <Text>Farmacias</Text>
+      <Text>Farmácias</Text>
       <TextTitulo>+ Avenida Barreto de Menezes, Cajueiro Seco </TextTitulo>
-      <TextTitulo>+ Avenida Barao de Lucena, Jaboatao Centro </TextTitulo>
+      <TextTitulo>+ Avenida Barão de Lucena, Jaboatão Centro </TextTitulo>
       <TextTitulo>+ Avenida Dois Rios, Ibura</TextTitulo>
       <TextTitulo>+ Rua Pontegy. Ipsep - Recife </TextTitulo>
     </Container>
@@ -41,7 +41,7 @@ const Farmacias = () => {
 }
 Farmacias.navigationOptions = () => {
   return {
-    title: 'Farmacias',
+    title: 'Farmácias',
     headerStyle: {
       backgroundColor: '#00C2CB',
       height: 80,
